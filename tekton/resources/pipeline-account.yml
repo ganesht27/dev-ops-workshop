@@ -10,7 +10,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: pipeline-role
-  namespace: tekton-pipelines
+  namespace: production
 rules:
 - apiGroups: [""]
   resources: ["services"]
@@ -23,7 +23,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: pipeline-role-binding
-  namespace: tekton-pipelines
+  namespace: production
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
