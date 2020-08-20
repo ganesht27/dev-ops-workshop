@@ -4,7 +4,7 @@ metadata:
   name: demo-api-deployment
   labels:
     app: demo-api
-  namespace: tekton-pipelines
+  namespace: production
 spec:
   replicas: 1
   selector:
@@ -27,7 +27,7 @@ metadata:
   name: demo-api-service
   labels:
     app: demo-api
-  namespace: tekton-pipelines
+  namespace: production
 spec:
   ports:
     - port: 8080
