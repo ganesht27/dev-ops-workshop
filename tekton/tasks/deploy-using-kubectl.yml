@@ -6,7 +6,7 @@ metadata:
 spec:
   inputs:
     resources:
-      - name: git-source
+      - name: demo-app-git
         type: git
     params:
       - name: pathToYamlFile
