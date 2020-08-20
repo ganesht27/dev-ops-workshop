@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
   name: deploy-using-kubectl
@@ -6,7 +6,7 @@ metadata:
 spec:
   inputs:
     resources:
-      - name: demo-app-git
+      - name: git-source
         type: git
     params:
       - name: pathToYamlFile
