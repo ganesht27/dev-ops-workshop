@@ -17,7 +17,7 @@ spec:
   tasks:
   - name: deploy-to-cluster
     taskRef:
-      name: deploy-using-kubectl
+      name: task-deploy-using-kubectl
     params:
       - name: pathToYamlFile
         value:  "$(params.pathToYamlFile)"
