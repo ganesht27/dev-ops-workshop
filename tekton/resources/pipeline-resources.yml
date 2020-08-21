@@ -1,0 +1,25 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: demo-app-git
+  namespace: tekton-pipelines
+spec:
+  type: git
+  params:
+    - name: revision
+      value: master
+    - name: url
+      value: https://github.com/ganesht27/dev-ops-workshop
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: demo-app-image
+  namespace: tekton-pipelines
+spec:
+  type: image
+  params:
+    - name: url
+      value: ganesht27/demo-api
+---

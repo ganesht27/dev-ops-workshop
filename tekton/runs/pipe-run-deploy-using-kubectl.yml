@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: pipe-run-deploy-using-kubectl
+  namespace: tekton-pipelines
+spec:
+  pipelineRef:
+    name: pipeline-deploy-using-kubectl
+  resources:
+    - name: git-source
+      resourceRef:
+        name: demo-app-git
+  params:
+    - name: pathToYamlFile
+      value: "manifests/demo-api.yml"
+    - name: imageUrl
+      value: "ganesht27/demo-api"
+    - name: imageTag
+      value: "latest"
+  serviceAccountName: pipeline-account

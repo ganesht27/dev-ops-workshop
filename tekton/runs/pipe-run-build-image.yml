@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: pipe-run-build-image
+  namespace: tekton-pipelines
+spec:
+  pipelineRef:
+    name: pipeline-build-image
+  resources:
+    - name: docker-source
+      resourceRef:
+        name: demo-app-git
+    - name: builtImage
+      resourceRef:
+        name: demo-app-image
+  params:
+    - name: pathToDockerFile
+      value: Dockerfile
+  serviceAccountName: pipeline-account
